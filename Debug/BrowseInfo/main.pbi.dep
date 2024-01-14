@@ -1,0 +1,29 @@
+C:\Users\Adham\Desktop\sem\ 7\embeded\LiFi_Project_1\Li-fi\ Project\Debug\BrowseInfo\main.pbi: \
+  C:\Users\Adham\Desktop\sem\ 7\embeded\LiFi_Project_1\Li-fi\ Project\APP\..\bitwise_operations.h \
+  C:\Users\Adham\Desktop\sem\ 7\embeded\LiFi_Project_1\Li-fi\ Project\APP\app.h \
+  D:\IAR\TivaWare\driverlib\sysctl.h D:\IAR\TivaWare\driverlib\gpio.h \
+  D:\IAR\TivaWare\inc\hw_memmap.h D:\IAR\TivaWare\inc\tm4c123gh6pm.h \
+  D:\IAR\installation\arm\inc\c\DLib_Product_string.h \
+  D:\IAR\installation\arm\inc\c\ycheck.h \
+  D:\IAR\installation\arm\inc\c\string.h \
+  D:\IAR\installation\arm\inc\c\ysizet.h \
+  D:\IAR\installation\arm\inc\c\stdio.h \
+  C:\Users\Adham\Desktop\sem\ 7\embeded\LiFi_Project_1\Li-fi\ Project\HAL\ultrasonic.h \
+  C:\Users\Adham\Desktop\sem\ 7\embeded\LiFi_Project_1\Li-fi\ Project\HAL\bluetooth.h \
+  C:\Users\Adham\Desktop\sem\ 7\embeded\LiFi_Project_1\Li-fi\ Project\HAL\magnetic.h \
+  C:\Users\Adham\Desktop\sem\ 7\embeded\LiFi_Project_1\Li-fi\ Project\HAL\fume.h \
+  D:\IAR\TivaWare\driverlib\timer.h \
+  D:\IAR\TivaWare\driverlib\interrupt.h \
+  D:\IAR\installation\arm\inc\c\DLib_Product.h \
+  D:\IAR\installation\arm\inc\c\DLib_Config_Normal.h \
+  D:\IAR\installation\arm\inc\c\DLib_Defaults.h \
+  D:\IAR\installation\arm\inc\c\yvals.h \
+  D:\IAR\installation\arm\inc\c\stdint.h \
+  D:\IAR\installation\arm\inc\c\stdbool.h \
+  C:\Users\Adham\Desktop\sem\ 7\embeded\LiFi_Project_1\Li-fi\ Project\APP\..\MCAL\gptm.h \
+  C:\Users\Adham\Desktop\sem\ 7\embeded\LiFi_Project_1\Li-fi\ Project\HAL\..\MCAL\uart.h \
+  C:\Users\Adham\Desktop\sem\ 7\embeded\LiFi_Project_1\Li-fi\ Project\APP\..\MCAL\GPIO.h \
+  C:\Users\Adham\Desktop\sem\ 7\embeded\LiFi_Project_1\Li-fi\ Project\MCAL\systick.h \
+  C:\Users\Adham\Desktop\sem\ 7\embeded\LiFi_Project_1\Li-fi\ Project\APP\..\Types.h \
+  C:\Users\Adham\Desktop\sem\ 7\embeded\LiFi_Project_1\Li-fi\ Project\APP\..\tm4c123gh6pm.h \
+  C:\Users\Adham\Desktop\sem\ 7\embeded\LiFi_Project_1\Li-fi\ Project\main.c

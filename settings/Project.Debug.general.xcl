@@ -1,0 +1,15 @@
+"D:\IAR\installation\arm\bin\armPROC.dll" 
+
+"D:\IAR\installation\arm\bin\armLMIFTDI.dll" 
+
+"C:\Users\Adham\Desktop\sem 7\embeded\LiFi_Project_1\Li-fi Project\Debug\Exe\c.out" 
+
+--plugin="D:\IAR\installation\arm\bin\armbat.dll" 
+
+--device_macro="D:\IAR\installation\arm\config\debugger\TexasInstruments\TM4C123.dmac" 
+
+--flash_loader="D:\IAR\installation\arm\config\flashloader\TexasInstruments\FlashTC4_H6_o.board" 
+
+
+
+

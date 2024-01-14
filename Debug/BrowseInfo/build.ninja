@@ -1,0 +1,153 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = D$:\IAR\installation\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++D$:\IAR\installation\common\bin\XclFileGenerator.exe $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = D$:\IAR\installation\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++D$:\IAR\installation\common\bin\SourceIndexer.exe $flags
+
+rule MAKEBROWSE
+  command = D$:\IAR\installation\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++D$:\IAR\installation\common\bin\makeBrowseData.exe $flags
+
+rule PDBLINK
+  command = D$:\IAR\installation\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++D$:\IAR\installation\common\bin\PbdLink.exe $flags
+
+
+
+#Build steps
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\APP\app.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\APP\app.c" -xcl_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\APP\app.xcl" -macro_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\APP\app.tmp" -icc_path D$:\IAR\installation\arm\bin\iccarm.exe
+  flags = "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\APP\app.c" -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\Obj\APP" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\IAR\installation\arm\inc\c\DLib_Config_Normal.h -I D$:\IAR\TivaWare\ -Ol --predef_macros "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\APP\app.tmp"
+  rspfile_name = C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\APP\app.xcl.rsp
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\bluetooth.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\HAL\bluetooth.c" -xcl_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\bluetooth.xcl" -macro_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\bluetooth.tmp" -icc_path D$:\IAR\installation\arm\bin\iccarm.exe
+  flags = "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\HAL\bluetooth.c" -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\Obj\HAL" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\IAR\installation\arm\inc\c\DLib_Config_Normal.h -I D$:\IAR\TivaWare\ -Ol --predef_macros "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\bluetooth.tmp"
+  rspfile_name = C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\bluetooth.xcl.rsp
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\fume.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\HAL\fume.c" -xcl_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\fume.xcl" -macro_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\fume.tmp" -icc_path D$:\IAR\installation\arm\bin\iccarm.exe
+  flags = "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\HAL\fume.c" -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\Obj\HAL" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\IAR\installation\arm\inc\c\DLib_Config_Normal.h -I D$:\IAR\TivaWare\ -Ol --predef_macros "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\fume.tmp"
+  rspfile_name = C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\fume.xcl.rsp
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\magnetic.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\HAL\magnetic.c" -xcl_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\magnetic.xcl" -macro_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\magnetic.tmp" -icc_path D$:\IAR\installation\arm\bin\iccarm.exe
+  flags = "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\HAL\magnetic.c" -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\Obj\HAL" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\IAR\installation\arm\inc\c\DLib_Config_Normal.h -I D$:\IAR\TivaWare\ -Ol --predef_macros "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\magnetic.tmp"
+  rspfile_name = C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\magnetic.xcl.rsp
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\ultrasonic.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\HAL\ultrasonic.c" -xcl_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\ultrasonic.xcl" -macro_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\ultrasonic.tmp" -icc_path D$:\IAR\installation\arm\bin\iccarm.exe
+  flags = "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\HAL\ultrasonic.c" -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\Obj\HAL" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\IAR\installation\arm\inc\c\DLib_Config_Normal.h -I D$:\IAR\TivaWare\ -Ol --predef_macros "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\ultrasonic.tmp"
+  rspfile_name = C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\ultrasonic.xcl.rsp
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\GPIO.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\MCAL\GPIO.c" -xcl_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\GPIO.xcl" -macro_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\GPIO.tmp" -icc_path D$:\IAR\installation\arm\bin\iccarm.exe
+  flags = "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\MCAL\GPIO.c" -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\Obj\MCAL" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\IAR\installation\arm\inc\c\DLib_Config_Normal.h -I D$:\IAR\TivaWare\ -Ol --predef_macros "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\GPIO.tmp"
+  rspfile_name = C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\GPIO.xcl.rsp
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\gptm.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\MCAL\gptm.c" -xcl_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\gptm.xcl" -macro_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\gptm.tmp" -icc_path D$:\IAR\installation\arm\bin\iccarm.exe
+  flags = "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\MCAL\gptm.c" -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\Obj\MCAL" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\IAR\installation\arm\inc\c\DLib_Config_Normal.h -I D$:\IAR\TivaWare\ -Ol --predef_macros "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\gptm.tmp"
+  rspfile_name = C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\gptm.xcl.rsp
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\systick.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\MCAL\systick.c" -xcl_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\systick.xcl" -macro_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\systick.tmp" -icc_path D$:\IAR\installation\arm\bin\iccarm.exe
+  flags = "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\MCAL\systick.c" -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\Obj\MCAL" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\IAR\installation\arm\inc\c\DLib_Config_Normal.h -I D$:\IAR\TivaWare\ -Ol --predef_macros "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\systick.tmp"
+  rspfile_name = C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\systick.xcl.rsp
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\uart.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\MCAL\uart.c" -xcl_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\uart.xcl" -macro_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\uart.tmp" -icc_path D$:\IAR\installation\arm\bin\iccarm.exe
+  flags = "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\MCAL\uart.c" -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\Obj\MCAL" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\IAR\installation\arm\inc\c\DLib_Config_Normal.h -I D$:\IAR\TivaWare\ -Ol --predef_macros "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\uart.tmp"
+  rspfile_name = C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\uart.xcl.rsp
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\main.c" -xcl_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\main.xcl" -macro_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\main.tmp" -icc_path D$:\IAR\installation\arm\bin\iccarm.exe
+  flags = "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\main.c" -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\IAR\installation\arm\inc\c\DLib_Config_Normal.h -I D$:\IAR\TivaWare\ -Ol --predef_macros "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\main.tmp"
+  rspfile_name = C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\main.xcl.rsp
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\startup_ewarm.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\startup_ewarm.c" -xcl_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\startup_ewarm.xcl" -macro_file "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\startup_ewarm.tmp" -icc_path D$:\IAR\installation\arm\bin\iccarm.exe
+  flags = "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\startup_ewarm.c" -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\IAR\installation\arm\inc\c\DLib_Config_Normal.h -I D$:\IAR\TivaWare\ -Ol --predef_macros "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\startup_ewarm.tmp"
+  rspfile_name = C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\startup_ewarm.xcl.rsp
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\APP\app.pbi : INDEXER C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\APP\app.xcl |  $
+C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\APP\app.c
+  flags = "-out=C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\APP\app.pbi" -f "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\APP\app.xcl"
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\bluetooth.pbi : INDEXER C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\bluetooth.xcl |  $
+C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\HAL\bluetooth.c
+  flags = "-out=C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\bluetooth.pbi" -f "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\bluetooth.xcl"
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\fume.pbi : INDEXER C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\fume.xcl |  $
+C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\HAL\fume.c
+  flags = "-out=C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\fume.pbi" -f "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\fume.xcl"
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\magnetic.pbi : INDEXER C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\magnetic.xcl |  $
+C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\HAL\magnetic.c
+  flags = "-out=C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\magnetic.pbi" -f "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\magnetic.xcl"
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\ultrasonic.pbi : INDEXER C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\ultrasonic.xcl |  $
+C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\HAL\ultrasonic.c
+  flags = "-out=C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\ultrasonic.pbi" -f "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\ultrasonic.xcl"
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\GPIO.pbi : INDEXER C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\GPIO.xcl |  $
+C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\MCAL\GPIO.c
+  flags = "-out=C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\GPIO.pbi" -f "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\GPIO.xcl"
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\gptm.pbi : INDEXER C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\gptm.xcl |  $
+C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\MCAL\gptm.c
+  flags = "-out=C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\gptm.pbi" -f "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\gptm.xcl"
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\systick.pbi : INDEXER C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\systick.xcl |  $
+C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\MCAL\systick.c
+  flags = "-out=C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\systick.pbi" -f "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\systick.xcl"
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\uart.pbi : INDEXER C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\uart.xcl |  $
+C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\MCAL\uart.c
+  flags = "-out=C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\uart.pbi" -f "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\uart.xcl"
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\main.pbi : INDEXER C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\main.xcl |  $
+C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\main.c
+  flags = "-out=C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\main.pbi" -f "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\main.xcl"
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\startup_ewarm.pbi : INDEXER C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\startup_ewarm.xcl |  $
+C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\startup_ewarm.c
+  flags = "-out=C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\startup_ewarm.pbi" -f "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\startup_ewarm.xcl"
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\Project.pbw : MAKEBROWSE C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\Project.pbd
+  flags = "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\Project.pbd" -output "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\Project.pbw"
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\Project_part0.pbi : PDBLINK C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\APP\app.pbi |  $
+C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\bluetooth.pbi $
+C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\fume.pbi
+  flags = -M "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\Project_part0.pbi" "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\APP\app.pbi" "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\bluetooth.pbi" "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\fume.pbi"
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\Project_part1.pbi : PDBLINK C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\magnetic.pbi |  $
+C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\ultrasonic.pbi $
+C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\GPIO.pbi
+  flags = -M "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\Project_part1.pbi" "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\magnetic.pbi" "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\HAL\ultrasonic.pbi" "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\GPIO.pbi"
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\Project_part2.pbi : PDBLINK C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\gptm.pbi |  $
+C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\systick.pbi $
+C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\uart.pbi
+  flags = -M "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\Project_part2.pbi" "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\gptm.pbi" "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\systick.pbi" "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\MCAL\uart.pbi"
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\Project_part3.pbi : PDBLINK C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\main.pbi |  $
+C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\startup_ewarm.pbi
+  flags = -M "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\Project_part3.pbi" "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\main.pbi" "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\startup_ewarm.pbi"
+
+build C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\Project.pbd : PDBLINK C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\Project_part0.pbi |  $
+C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\Project_part1.pbi $
+C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\Project_part2.pbi $
+C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\Project_part3.pbi
+  flags = -M "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\Project.pbd" "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\Project_part0.pbi" "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\Project_part1.pbi" "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\Project_part2.pbi" "C$:\Users\Adham\Desktop\sem$ 7\embeded\LiFi_Project_1\Li-fi$ Project\Debug\BrowseInfo\Project_part3.pbi"
+
